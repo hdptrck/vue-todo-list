@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex, { StoreOptions } from "vuex";
-import { Task } from "@/models/task.model";
+import { Task } from "@/types/index";
 import { Result } from "./result";
 
 Vue.use(Vuex);

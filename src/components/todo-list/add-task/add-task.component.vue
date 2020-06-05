@@ -1,3 +1,31 @@
-<template src="./add-task.component.html"></template>
-<script src="./add-task.component.ts" lang="ts"></script>
-<style src="./add-task.component.scss" scoped lang="scss"></style>
+<template>
+  <v-text-field
+    v-model="description"
+    label="Add New Task"
+    filled
+    outlined
+    shaped
+    dense
+    append-icon="mdi-view-grid-plus-outline"
+    @click:append="addNewTask"
+    @keyup.enter="addNewTask"
+  ></v-text-field>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+
+@Component({})
+export default class AddTaskComponent extends Vue {
+  description = "";
+  addNewTask() {
+    this.$store.dispatch("addTask", {
+      description: this.description
+    });
+    this.description = "";
+  }
+}
+</script>
+
+<style scoped lang="scss"></style>

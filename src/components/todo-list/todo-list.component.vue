@@ -1,3 +1,30 @@
-<template src="./todo-list.component.html"></template>
-<script src="./todo-list.component.ts" lang="ts"></script>
-<style src="./todo-list.component.scss" scoped lang="scss"></style>
+<template>
+  <v-container pa-3 class="grey lighten-5">
+    <v-row no-gutters justify="center">
+      <v-col md="4">Hallo task</v-col>
+      <v-col md="4">
+        <tl-add-task></tl-add-task>
+      </v-col>
+    </v-row>
+    <v-divider></v-divider>
+    <v-row no-gutters justify="center">
+      <v-col md="12">
+        <tl-tasks-list></tl-tasks-list>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+
+@Component({})
+export default class TodoListComponent extends Vue {
+  mounted() {
+    console.log("hello from app");
+  }
+}
+</script>
+
+<style scoped lang="scss"></style>

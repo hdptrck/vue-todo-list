@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import HomeComponent from "../views/home/home.component.vue";
+import HomeComponent from "../views/home.component.vue";
 
 Vue.use(VueRouter);
 
