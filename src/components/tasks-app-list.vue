@@ -8,7 +8,7 @@
             <td width="1%">
               <v-checkbox
                 v-model="task.isCompleted"
-                @change="completeTask(task.isCompleted, task)"
+                v-on:change="completeTask(task.isCompleted, task)"
               ></v-checkbox>
             </td>
             <td width="99%">
@@ -18,7 +18,7 @@
               >
             </td>
             <td>
-              <v-btn icon color="grey" @click="removeTask(task.id)">
+              <v-btn icon color="grey" v-on:click="removeTask(task.id)">
                 <v-icon>mdi-delete-circle-outline</v-icon>
               </v-btn>
             </td>
@@ -34,7 +34,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Task } from "@/types/index";
 
-@Component({})
+@Component
 export default class TasksListComponent extends Vue {
   tasks: Array<Task> = new Array<Task>();
   mounted() {

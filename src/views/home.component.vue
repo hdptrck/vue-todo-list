@@ -8,14 +8,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-
-@Component({})
-export default class HomeComponent extends Vue {
+export default {
   mounted() {
     console.log("hello from app");
   }
-}
+};
 </script>
+
 <style scoped lang="scss"></style>

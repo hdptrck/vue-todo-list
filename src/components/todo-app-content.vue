@@ -1,7 +1,6 @@
 <template>
   <v-container pa-3 class="grey lighten-5">
-    <v-row no-gutters justify="center">
-      <v-col md="4">Hallo task</v-col>
+    <v-row no-gutters>
       <v-col md="4">
         <tl-add-task></tl-add-task>
       </v-col>
@@ -16,15 +15,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-
-@Component({})
-export default class TodoListComponent extends Vue {
+export default {
   mounted() {
     console.log("hello from app");
   }
-}
+};
 </script>
 
 <style scoped lang="scss"></style>

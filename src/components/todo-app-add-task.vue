@@ -2,13 +2,11 @@
   <v-text-field
     v-model="description"
     label="Add New Task"
-    filled
     outlined
-    shaped
     dense
-    append-icon="mdi-view-grid-plus-outline"
-    @click:append="addNewTask"
-    @keyup.enter="addNewTask"
+    append-icon="mdi-plus-box"
+    v-on:click:append="addNewTask"
+    v-on:keyup.enter="addNewTask"
   ></v-text-field>
 </template>
 
@@ -16,14 +14,16 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-@Component({})
+@Component
 export default class AddTaskComponent extends Vue {
   description = "";
   addNewTask() {
+    console.log(this.$store.state.name);
     this.$store.dispatch("addTask", {
       description: this.description
     });
     this.description = "";
+    console.log("state data", this.$store.state.data);
   }
 }
 </script>
