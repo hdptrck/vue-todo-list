@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 const store: StoreOptions<Result<Task[]>> = {
   state: {
-    name: "Todo App",
+    title: "Todo App",
     success: true,
     message: undefined,
     errorCode: 200,
@@ -16,7 +16,14 @@ const store: StoreOptions<Result<Task[]>> = {
   },
   mutations: {
     addTask(state, task: Task) {
-      state.data.push(task);
+      if (!task.description) {
+        console.log("error handling missing");
+      }
+      state.data.push({
+        id: (state.data.length + 1).toString(),
+        description: task.description,
+        isCompleted: false
+      } as Task);
     },
     editTask(state, task: Task) {
       const taskIndex: number = state.data.findIndex(t => t.id == task.id);
@@ -26,6 +33,12 @@ const store: StoreOptions<Result<Task[]>> = {
       const taskIndex: number = state.data.findIndex(t => t.id == task.id);
       taskIndex > -1
         ? state.data.splice(taskIndex, 1)
+        : new Error("Invalid Index");
+    },
+    completeTask(state, task: Task) {
+      const taskIndex: number = state.data.findIndex(t => t.id == task.id);
+      taskIndex > -1
+        ? state.data[taskIndex].isCompleted = !state.data[taskIndex].isCompleted
         : new Error("Invalid Index");
     }
   },
@@ -38,11 +51,17 @@ const store: StoreOptions<Result<Task[]>> = {
     },
     removeTask(context, task: Task) {
       context.commit("removeTask", task);
+    },
+    completeTask(context, task: Task) {
+      context.commit("completeTask",task);
     }
   },
   getters: {
     getTasks(state): Array<Task> {
       return state.data;
+    },
+    getTitle(state): string {
+      return state.title;
     }
   }
 };

@@ -1,5 +1,5 @@
 export interface Result<T> {
-  name: string;
+  title: string;
   success: boolean;
   message?: string;
   errorCode?: number;

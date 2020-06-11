@@ -5,12 +5,14 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { mapState } from "vuex";
 
 @Component
 export default class HeaderComponent extends Vue {
-  title: string = this.$store.state.name;
+  get title(): string {
+    return this.$store.state.title;
+  }
 }
 </script>
 

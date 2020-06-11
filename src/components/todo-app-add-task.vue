@@ -18,12 +18,10 @@ import Component from "vue-class-component";
 export default class AddTaskComponent extends Vue {
   description = "";
   addNewTask() {
-    console.log(this.$store.state.name);
     this.$store.dispatch("addTask", {
       description: this.description
     });
     this.description = "";
-    console.log("state data", this.$store.state.data);
   }
 }
 </script>
