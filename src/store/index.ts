@@ -34,12 +34,6 @@ const store: StoreOptions<Result<Task[]>> = {
       taskIndex > -1
         ? state.data.splice(taskIndex, 1)
         : new Error("Invalid Index");
-    },
-    completeTask(state, task: Task) {
-      const taskIndex: number = state.data.findIndex(t => t.id == task.id);
-      taskIndex > -1
-        ? state.data[taskIndex].isCompleted = !state.data[taskIndex].isCompleted
-        : new Error("Invalid Index");
     }
   },
   actions: {
@@ -51,9 +45,6 @@ const store: StoreOptions<Result<Task[]>> = {
     },
     removeTask(context, task: Task) {
       context.commit("removeTask", task);
-    },
-    completeTask(context, task: Task) {
-      context.commit("completeTask",task);
     }
   },
   getters: {
