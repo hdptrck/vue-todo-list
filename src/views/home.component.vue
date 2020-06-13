@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <tl-header></tl-header>
     <v-content>
-      <tl-todo-list></tl-todo-list>
+      <tl-todo-content></tl-todo-content>
     </v-content>
   </v-app>
 </template>

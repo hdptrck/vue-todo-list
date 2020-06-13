@@ -8,7 +8,7 @@
     <v-divider></v-divider>
     <v-row no-gutters justify="center">
       <v-col md="12">
-        <tl-tasks-list></tl-tasks-list>
+        <tl-todo-list></tl-todo-list>
       </v-col>
     </v-row>
   </v-container>

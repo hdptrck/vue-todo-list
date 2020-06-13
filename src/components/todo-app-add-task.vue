@@ -22,6 +22,8 @@ export default class AddTaskComponent extends Vue {
       description: this.description
     });
     this.description = "";
+    
+    console.log(this.$store.state.data);
   }
 }
 </script>

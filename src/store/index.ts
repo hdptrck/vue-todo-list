@@ -22,7 +22,7 @@ const store: StoreOptions<Result<Task[]>> = {
       state.data.push({
         id: (state.data.length + 1).toString(),
         description: task.description,
-        isCompleted: false
+        isCompleted: true
       } as Task);
     },
     editTask(state, task: Task) {
