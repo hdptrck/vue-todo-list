@@ -32,16 +32,9 @@ const store = {
       taskIndex > -1
         ? state.data.splice(taskIndex, 1)
         : new Error("Invalid Index");
-    },
-    testMutation(state) {
-      state.name = "testMutation";
     }
   },
   actions: {
-    testAction(context) {
-      context.commit("testMutation");
-    },
-
     addTask(context, task) {
       context.commit("addTask", task);
     },
